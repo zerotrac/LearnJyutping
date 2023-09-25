@@ -47,7 +47,7 @@ class JyutCharacterValue:
             return 0
 
         acc = 1.0 if self.tested == 0 else self.correct / self.tested
-        return int(1000000 / (1 + (self.tested ** 0.5)) / acc)
+        return int(1000000 / (1 + (self.tested ** 0.5)) / (acc + 1e-7))
 
     def HasLearned(self) -> bool:
         return self.learned > 0
